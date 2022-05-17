@@ -14,33 +14,9 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-sm bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Hello Feedback</a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="index.php" class="nav-link">Home</a>
-            </li>
-
-            <li class="nav-item">
-              <a href="" class="nav-link active" aria-current="page">Feedback</a>
-            </li>
-
-            <li class="nav-item">
-              <a href="about-us.php" class="nav-link">About us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <?php
+  require_once 'header.php';
+  ?>
 
   <main>
     <div class="container d-flex flex-column align-items-center my-5">
@@ -67,9 +43,9 @@
     </div>
   </main>
 
-  <footer class="text-center">
-    Copyright &copy; 2022
-  </footer>
+  <?php
+  require_once 'footer.php'
+  ?>
 
   <!-- JavaScript Bundle with Popper (Bootstrap 5) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
