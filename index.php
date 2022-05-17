@@ -26,15 +26,15 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a href="#" class="nav-link active" aria-current="page">Home</a>
+              <a href="" class="nav-link active" aria-current="page">Home</a>
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link">Feedback</a>
+              <a href="feedback.php" class="nav-link">Feedback</a>
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link">About us</a>
+              <a href="about-us.php" class="nav-link">About us</a>
             </li>
           </ul>
         </div>
