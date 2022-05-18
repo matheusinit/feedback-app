@@ -18,19 +18,19 @@ $current_page = $uri_array[count($uri_array) - 1];
           <? if ($current_page == "index.php") : ?>
             <a href="" class="nav-link active" aria-current="page">Home</a>
           <? else : ?>
-            <a href="" class="nav-link">Home</a>
+            <a href="index.php" class="nav-link">Home</a>
           <? endif ?>
 
           <? if ($current_page == "feedback.php") : ?>
             <a href="" class="nav-link active" aria-current="page">Feedback</a>
           <? else : ?>
-            <a href="" class="nav-link">Feedback</a>
+            <a href="feedback.php" class="nav-link">Feedback</a>
           <? endif ?>
 
           <? if ($current_page == "about-us.php") : ?>
             <a href="" class="nav-link active" aria-current="page">About us</a>
           <? else : ?>
-            <a href="" class="nav-link">About-us</a>
+            <a href="about-us.php" class="nav-link">About-us</a>
           <? endif ?>
         </ul>
       </div>
