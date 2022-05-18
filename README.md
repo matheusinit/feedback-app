@@ -5,8 +5,8 @@ visa somente aprendizado e por isso não tem como objetivo performance ou segura
 
 ### Tecnologias
 
- + HTML - Para marcação
- + PHP - Para geração de página
- + Bootstrap - Biblioteca de estilização
+ + [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML) - Para marcação
+ + [PHP](https://www.php.net/) - Para geração de página
+ + [Bootstrap 5](https://getbootstrap.com/) - Biblioteca de estilização
 
 
