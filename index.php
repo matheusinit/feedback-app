@@ -1,3 +1,38 @@
+<?php
+
+$name = $email = $feedback = "";
+$nameErr = $emailErr = $feedbackErr = false;
+$isPost = false;
+$wasSuceeded = false;
+
+if (isset($_POST["submit"])) {
+  $isPost = true;
+
+  if (!empty($_POST["name"])) {
+    $name = $_POST["name"];
+  } else {
+    $nameErr = true;
+  }
+
+  if (!empty($_POST["email"])) {
+    $email = $_POST["email"];
+  } else {
+    $emailErr = true;
+  }
+
+  if (!empty($_POST["feedback"])) {
+    $feedback = $_POST["feedback"];
+  } else {
+    $feedbackErr = true;
+  }
+
+  if ($nameErr == false && $emailErr == false && $feedbackErr == false) {
+    $wasSuceeded = true;
+  }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +48,7 @@
   <title>Your Feedback</title>
 </head>
 
-<body>
+<body class="position-relative vh-100">
   <?php
   require_once 'header.php';
   ?>
@@ -23,27 +58,59 @@
       <h2>Give a feedback</h2>
       <p class="lead text-center">Leave a feedback for Hello Feedback</p>
 
-      <form action="" class="mt-4 w-75">
+      <form action="index.php" class="mt-4 w-75" method="POST" novalidate>
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter your name">
+          <input type="text" class="form-control <?= !$isPost ? "" : ($nameErr == 1 ? 'is-invalid' : 'is-valid') ?>" id="name" name="name" value="<?= $name ?>" placeholder="Enter your name" required>
+          <div class="valid-feedback">
+            Looks good.
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid name.
+          </div>
         </div>
 
         <div class="mb-3">
           <label for="email" class="form-label">E-mail</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter your e-mail">
+          <input type="email" class="form-control <?= !$isPost ? "" : ($emailErr == 1 ? 'is-invalid' : 'is-valid') ?>" id="email" name="email" value="<?= $email ?>" placeholder="Enter your e-mail" required>
+          <div class="valid-feedback">
+            Looks good.
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid e-mail.
+          </div>
         </div>
 
         <div class="mb-3">
           <label for="feedback" class="form-label">Feedback</label>
-          <textarea class="form-control" id="feedback" placeholder="Enter your feedback"></textarea>
+          <textarea class="form-control  <?= !$isPost ? "" : ($feedbackErr == 1 ? 'is-invalid' : 'is-valid') ?>" id="feedback" name="feedback" placeholder="Enter your feedback" required><?= $feedback ?></textarea>
+          <div class="valid-feedback">
+            Looks good.
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid feedback text.
+          </div>
         </div>
 
         <input type="submit" name="submit" value="Send" class="btn btn-dark w-100">
       </form>
-
-    </div>
   </main>
+
+  <div aria-live="polite" aria-atomic="true">
+    <div class="toast-container bottom-0 end-0 p-3">
+      <div class="toast fade <?= !$wasSuceeded ?: "show" ?>" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="" class="rounded me-2" alt="...">
+          <strong class="me-auto">Feedback App</strong>
+          <small class="text-muted">just now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          Your feedback was added.
+        </div>
+      </div>
+    </div>
+  </div>
 
   <?php
   require_once 'footer.php'
